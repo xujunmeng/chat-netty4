@@ -32,7 +32,6 @@ public class InvokerHoler {
      * 获取命令调用
      * @param module
      * @param cmd
-     * @param invoker
      */
     public static Invoker getInvoker(short module, short cmd){
     	Map<Short, Invoker> map = invokers.get(module);

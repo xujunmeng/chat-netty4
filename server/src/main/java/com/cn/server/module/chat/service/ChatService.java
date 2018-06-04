@@ -12,7 +12,7 @@ public interface ChatService {
 	 * @param playerId
 	 * @param content
 	 */
-	public void publicChat(long playerId, String content);
+	void publicChat(long playerId, String content);
 	
 	
 	/**
@@ -21,6 +21,6 @@ public interface ChatService {
 	 * @param targetPlayerId
 	 * @param content
 	 */
-	public void privateChat(long playerId, long targetPlayerId, String content);
+	void privateChat(long playerId, long targetPlayerId, String content);
 	
 }

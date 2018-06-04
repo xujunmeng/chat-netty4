@@ -22,7 +22,7 @@ public interface ChatHandler {
 	 * @return
 	 */
 	@SocketCommand(cmd = ChatCmd.PUBLIC_CHAT)
-	public Result<?> publicChat(long playerId, byte[] data);
+	Result<?> publicChat(long playerId, byte[] data);
 	
 	
 	
@@ -33,5 +33,5 @@ public interface ChatHandler {
 	 * @return
 	 */
 	@SocketCommand(cmd = ChatCmd.PRIVATE_CHAT)
-	public Result<?> privateChat(long playerId, byte[] data);
+	Result<?> privateChat(long playerId, byte[] data);
 }

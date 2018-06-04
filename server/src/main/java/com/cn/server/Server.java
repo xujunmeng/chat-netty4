@@ -32,6 +32,9 @@ public class Server {
 		EventLoopGroup bossGroup = new NioEventLoopGroup();
 		EventLoopGroup workerGroup = new NioEventLoopGroup();
 
+		// 创建业务线程池
+		final EventLoopGroup businessGroup = new NioEventLoopGroup();
+
 		try {
 			// 设置循环线程组事例
 			b.group(bossGroup, workerGroup);
@@ -45,11 +48,12 @@ public class Server {
 				public void initChannel(SocketChannel ch) throws Exception {
 					ch.pipeline().addLast(new RequestDecoder());
 					ch.pipeline().addLast(new ResponseEncoder());
-					ch.pipeline().addLast(new ServerHandler());
+					ch.pipeline().addLast(businessGroup, new ServerHandler());
 				}
 			});
 
-			b.option(ChannelOption.SO_BACKLOG, 2048);// 链接缓冲池队列大小
+			//链接缓冲池队列大小
+			b.option(ChannelOption.SO_BACKLOG, 2048);
 
 			// 绑定端口
 			b.bind(10102).sync();

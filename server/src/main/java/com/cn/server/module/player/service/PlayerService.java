@@ -16,7 +16,7 @@ public interface PlayerService {
 	 * @param passward
 	 * @return
 	 */
-	public PlayerResponse registerAndLogin(Session session, String playerName, String passward);
+	PlayerResponse registerAndLogin(Session session, String playerName, String passward);
 	
 	
 	/**
@@ -25,6 +25,6 @@ public interface PlayerService {
 	 * @param passward
 	 * @return
 	 */
-	public PlayerResponse login(Session session, String playerName, String passward);
+	PlayerResponse login(Session session, String playerName, String passward);
 
 }

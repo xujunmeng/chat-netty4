@@ -20,21 +20,21 @@ public interface PlayerHandler {
 	
 	/**
 	 * 创建并登录帐号
-	 * @param channel
+	 * @param session
 	 * @param data {@link RegisterRequest}
 	 * @return
 	 */
 	@SocketCommand(cmd = PlayerCmd.REGISTER_AND_LOGIN)
-	public Result<PlayerResponse> registerAndLogin(Session session, byte[] data);
+	Result<PlayerResponse> registerAndLogin(Session session, byte[] data);
 	
 
 	/**
 	 * 登录帐号
-	 * @param channel
+	 * @param session
 	 * @param data {@link LoginRequest}
 	 * @return
 	 */
 	@SocketCommand(cmd = PlayerCmd.LOGIN)
-	public Result<PlayerResponse> login(Session session, byte[] data);
+	Result<PlayerResponse> login(Session session, byte[] data);
 
 }
