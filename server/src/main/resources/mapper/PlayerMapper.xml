@@ -28,6 +28,6 @@
     <insert id="createPlayer" parameterType="com.cn.server.module.player.dao.entity.Player">
         insert into player (player_id, player_name, passward, level, exp)
 		values (#{playerId,jdbcType=INTEGER}, #{playerName,jdbcType=VARCHAR},
-		#{passward,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, #{exp,jdbcType=INTEGER}})
+		#{passward,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, #{exp,jdbcType=INTEGER})
     </insert>
 </mapper>

@@ -31,6 +31,6 @@ public interface IPlayerMapper {
 	 * @param player
 	 * @return
 	 */
-	Player createPlayer(Player player);
+	int createPlayer(Player player);
 
 }

@@ -35,7 +35,7 @@ public class PlayerServiceImpl implements PlayerService {
 		Player player = new Player();
 		player.setPlayerName(playerName);
 		player.setPassward(passward);
-		player = playerMapper.createPlayer(player);
+		playerMapper.createPlayer(player);
 
 		//顺便登录
 		return login(session, playerName, passward);

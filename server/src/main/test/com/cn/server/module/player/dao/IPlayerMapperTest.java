@@ -23,5 +23,18 @@ public class IPlayerMapperTest {
         Player playerById = playerMapper.getPlayerById(1);
         System.out.println(playerById);
     }
+    
+    @Test
+    public void testcreatePlayer() {
+        Player player = new Player();
+        player.setPlayerId(1);
+        player.setPlayerName("test-aa");
+        player.setPassward("123456");
+        player.setLevel(1);
+        player.setExp(2);
+        int i = playerMapper.createPlayer(player);
+        System.out.println(i);
+
+    }
 
 }
