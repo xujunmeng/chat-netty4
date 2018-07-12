@@ -1,4 +1,5 @@
 package com.cn.server;
+import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
@@ -110,6 +111,14 @@ public class ServerHandler extends SimpleChannelInboundHandler<Request> {
 		if(object != null){
 			Player player = (Player)object;
 			SessionManager.removeSession(player.getPlayerId());
+		}
+	}
+
+	@Override
+	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+		Channel channel = ctx.channel();
+		if (channel.isActive()) {
+			ctx.close();
 		}
 	}
 }
