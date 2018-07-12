@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="95619a05-a828-4101-8b8a-0368c1d5cf81" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/com/cn/client/module/player/handler/PlayerHandler.java" afterPath="$PROJECT_DIR$/client/src/main/java/com/cn/client/module/player/handler/PlayerHandler.java" />
     </list>
     <ignored path="netty4_parent.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,21 +50,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerHandler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayerHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/main/java/com/cn/client/module/player/handler/PlayerHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.602122">
-              <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="62" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerHandlerImpl.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PlayerHandlerImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/main/java/com/cn/client/module/player/handler/PlayerHandlerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+            <state vertical-scroll-proportion="-0.23342176">
+              <caret line="22" column="63" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -1429,7 +1428,7 @@
       <workItem from="1528164346594" duration="1292000" />
       <workItem from="1528967765780" duration="328000" />
       <workItem from="1531379572078" duration="1792000" />
-      <workItem from="1531382336908" duration="11660000" />
+      <workItem from="1531382336908" duration="12235000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1528081454986</created>
@@ -1533,7 +1532,13 @@
       <option name="project" value="LOCAL" />
       <updated>1531393993214</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="init">
+      <created>1531394615565</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1531394615565</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1569,7 +1574,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18613000" />
+    <option name="totallyTimeSpent" value="19188000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -2287,18 +2292,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/cn/client/module/player/handler/PlayerHandlerImpl.java">
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/cn/client/module/player/handler/PlayerHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+          <caret line="20" column="62" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/cn/client/module/player/handler/PlayerHandler.java">
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/cn/client/module/player/handler/PlayerHandlerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.602122">
-          <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
+        <state vertical-scroll-proportion="-0.23342176">
+          <caret line="22" column="63" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="63" />
           <folding />
         </state>
       </provider>
