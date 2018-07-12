@@ -1,4 +1,10 @@
-/target
-.idea
-.idea/inspectionProfiles/
-.idea/qaplug_profiles.xml
+/**/target
+/**/.settings
+/**/bin
+/**/.gitignore
+/**/.classpath
+/.classpath
+/**/.project
+/**/*.iml
+/**/.idea/
+/**/.DS_Store
