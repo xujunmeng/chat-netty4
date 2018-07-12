@@ -22,7 +22,7 @@ public interface PlayerHandler {
 	
 
 	/**
-	 * 创建并登录帐号
+	 * 登录帐号
 	 * @param resultCode
 	 * @param data {@link null}
 	 */
