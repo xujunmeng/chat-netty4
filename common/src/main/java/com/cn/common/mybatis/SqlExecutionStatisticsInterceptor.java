@@ -1,10 +1,11 @@
 package com.cn.common.mybatis;
 
-import com.aihuishou.common.util.StringUtil;
+import com.alibaba.fastjson.JSON;
 import org.apache.ibatis.cache.CacheKey;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;
+import org.apache.ibatis.plugin.*;
 import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.RowBounds;
 import org.slf4j.Logger;
@@ -13,7 +14,7 @@ import org.slf4j.LoggerFactory;
 import java.text.MessageFormat;
 import java.util.Properties;
 
-@Intercepts({ @Signature(type = Executor.class, method = "query", args = { MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class, CacheKey.class, BoundSql.class }), 
+@Intercepts({ @Signature(type = Executor.class, method = "query", args = { MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class, CacheKey.class, BoundSql.class }),
 	@Signature(type = Executor.class, method = "query", args = { MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class })})
 public class SqlExecutionStatisticsInterceptor implements Interceptor {
 
@@ -25,6 +26,7 @@ public class SqlExecutionStatisticsInterceptor implements Interceptor {
 	
     private int executionTimeThreshold = 100;
     
+	@Override
 	public Object intercept(Invocation invocation) throws Throwable {
 
 		Object object = null;
@@ -52,7 +54,7 @@ public class SqlExecutionStatisticsInterceptor implements Interceptor {
 
 		        Object param = boundSql.getParameterObject();
 		        String sql = boundSql.getSql().trim();	
-		        logger.info(MessageFormat.format("[SqlMethod: {0}] [SqlTime:{1}] [Sql: {2}] [Param: {3}]", sqlId, String.valueOf(timespan), sql, StringUtil.toJSONString(param)));
+		        logger.info(MessageFormat.format("[SqlMethod: {0}] [SqlTime:{1}] [Sql: {2}] [Param: {3}]", sqlId, String.valueOf(timespan), sql, JSON.toJSONString(param)));
 			}
 		} catch (Throwable t) {
 			logger.error("faied to log sql", t);

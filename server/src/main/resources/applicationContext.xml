@@ -30,6 +30,19 @@
 		<!-- 数据库连接池 -->
 		<property name="dataSource" ref="dataSource"/>
 		<property name="mapperLocations" value="classpath*:mapper/*Mapper.xml"/>
+		<property name="plugins">
+			<array>
+				<bean class="com.cn.common.mybatis.MySqlPaginationInterceptor"/>
+				<bean class="com.cn.common.mybatis.SqlExecutionStatisticsInterceptor">
+					<property name="executionTimeThreshold" value="300"/>
+				</bean>
+			</array>
+		</property>
+	</bean>
+
+	<bean id="operationMapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="sqlSessionFactoryBeanName" value="sessionFactory" />
+		<property name="basePackage" value="com.cn.server.module.player.dao" />
 	</bean>
 
 </beans>
