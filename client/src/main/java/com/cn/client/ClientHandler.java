@@ -34,8 +34,7 @@ public class ClientHandler extends SimpleChannelInboundHandler<Response> {
 	
 	/**
 	 * 消息处理
-	 * @param channelId
-	 * @param request
+	 * @param response
 	 */
 	private void handlerResponse(Response response){
 		
