@@ -9,7 +9,7 @@ import com.cn.common.module.ModuleId;
 import com.cn.common.module.chat.ChatCmd;
 import com.cn.common.module.chat.response.ChatResponse;
 import com.cn.common.module.chat.response.ChatType;
-import com.cn.server.module.player.dao.PlayerDao;
+import com.cn.server.module.player.dao.IPlayerMapper;
 import com.cn.server.module.player.dao.entity.Player;
 /**
  * 聊天服务
@@ -20,12 +20,12 @@ import com.cn.server.module.player.dao.entity.Player;
 public class ChatServiceImpl implements ChatService{
 	
 	@Autowired
-	private PlayerDao playerDao;
+	private IPlayerMapper playerMapper;
 
 	@Override
 	public void publicChat(long playerId, String content) {
 		
-		Player player = playerDao.getPlayerById(playerId);
+		Player player = playerMapper.getPlayerById(playerId);
 		
 		
 		//获取所有在线玩家
@@ -52,10 +52,10 @@ public class ChatServiceImpl implements ChatService{
 			throw new ErrorCodeException(ResultCode.CAN_CHAT_YOUSELF);
 		}
 		
-		Player player = playerDao.getPlayerById(playerId);
+		Player player = playerMapper.getPlayerById(playerId);
 		
 		//判断目标是否存在
-		Player targetPlayer = playerDao.getPlayerById(targetPlayerId);
+		Player targetPlayer = playerMapper.getPlayerById(targetPlayerId);
 		if(targetPlayer == null){
 			throw new ErrorCodeException(ResultCode.PLAYER_NO_EXIST);
 		}

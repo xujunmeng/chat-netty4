@@ -1,23 +1,15 @@
 package com.cn.server.module.player.dao.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
 /**
  * 玩家实体对象
  * @author -琴兽-
  *
  */
-@Entity
-@Table(name = "player")
 public class Player {
 	
 	/**
 	 * 玩家id
 	 */
-	@Id
-	@GeneratedValue
 	private long playerId;
 	
 	/**

@@ -7,7 +7,7 @@ import com.cn.common.core.model.ResultCode;
 import com.cn.common.core.session.Session;
 import com.cn.common.core.session.SessionManager;
 import com.cn.common.module.player.response.PlayerResponse;
-import com.cn.server.module.player.dao.PlayerDao;
+import com.cn.server.module.player.dao.IPlayerMapper;
 import com.cn.server.module.player.dao.entity.Player;
 /**
  * 玩家服务
@@ -19,12 +19,12 @@ import com.cn.server.module.player.dao.entity.Player;
 public class PlayerServiceImpl implements PlayerService {
 
 	@Autowired
-	private PlayerDao playerDao;
+	private IPlayerMapper playerMapper;
 
 	@Override
 	public PlayerResponse registerAndLogin(Session session, String playerName, String passward) {
 
-		Player existplayer = playerDao.getPlayerByName(playerName);
+		Player existplayer = playerMapper.getPlayerByName(playerName);
 
 		// 玩家名已被占用
 		if (existplayer != null) {
@@ -35,7 +35,7 @@ public class PlayerServiceImpl implements PlayerService {
 		Player player = new Player();
 		player.setPlayerName(playerName);
 		player.setPassward(passward);
-		player = playerDao.createPlayer(player);
+		player = playerMapper.createPlayer(player);
 
 		//顺便登录
 		return login(session, playerName, passward);
@@ -50,7 +50,7 @@ public class PlayerServiceImpl implements PlayerService {
 		}
 
 		// 玩家不存在
-		Player player = playerDao.getPlayerByName(playerName);
+		Player player = playerMapper.getPlayerByName(playerName);
 		if (player == null) {
 			throw new ErrorCodeException(ResultCode.PLAYER_NO_EXIST);
 		}
