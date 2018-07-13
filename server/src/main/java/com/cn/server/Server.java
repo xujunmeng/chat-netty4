@@ -48,7 +48,7 @@ public class Server {
 				public void initChannel(SocketChannel ch) throws Exception {
 					ch.pipeline().addLast(new RequestDecoder());
 					ch.pipeline().addLast(new ResponseEncoder());
-					ch.pipeline().addLast(businessGroup, new ServerHandler());
+					ch.pipeline().addLast(businessGroup, new ServerMessageHandler());
 				}
 			});
 

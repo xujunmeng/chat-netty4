@@ -21,7 +21,7 @@ import com.google.protobuf.GeneratedMessage;
  * @author -琴兽-
  *
  */
-public class ServerHandler extends SimpleChannelInboundHandler<Request> {
+public class ServerMessageHandler extends SimpleChannelInboundHandler<Request> {
 	
 	/**
 	 * 接收消息
